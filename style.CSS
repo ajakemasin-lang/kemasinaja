@@ -1,132 +1,151 @@
 body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #e6f0ff, #cce0ff);
-  color: #333;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cormorant', serif;
+    background: #e7eef7;
+    display: flex;
 }
 
-.app {
-  display: flex;
-  min-height: 100vh;
-}
-
+/* SIDEBAR */
 .sidebar {
-  width: 220px;
-  background-color: #0b3d91;
-  color: white;
-  padding: 20px;
+    width: 230px;
+    background: #0d2347;
+    height: 100vh;
+    padding: 25px;
+    color: white;
 }
 
-.sidebar .logo {
-  width: 100%;
-  margin-bottom: 20px;
+.logo {
+    text-align: center;
 }
 
-.sidebar nav a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  margin: 10px 0;
-  font-weight: bold;
+.logo img {
+    width: 55px;
 }
 
-.sidebar nav a:hover {
-  text-decoration: underline;
+.logo h2 {
+    font-family: "Alegreya Sans";
+    margin-top: 10px;
 }
 
-.main {
-  flex: 1;
-  padding: 20px;
+.sidebar ul {
+    margin-top: 40px;
+    padding: 0;
 }
 
-.header h1 {
-  color: #0b3d91;
+.sidebar li {
+    list-style: none;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 5px 0;
 }
 
-.cards {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+.sidebar li.active,
+.sidebar li:hover {
+    background: #1f3e70;
+}
+
+/* CONTENT */
+.content {
+    padding: 40px;
+    width: 100%;
+}
+
+.title {
+    font-family: "Alegreya Sans";
+    font-size: 42px;
+    margin-bottom: 5px;
+    color: #0d2347;
+}
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-family: "Alegreya Sans";
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
 .card {
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 15px;
-  width: 250px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 .card img {
-  width: 100%;
-  border-radius: 5px;
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
-  margin-top: 10px;
-  color: #0b3d91;
+    font-family: "Alegreya Sans";
 }
 
-.card .price {
-  font-weight: bold;
-  margin: 10px 0;
-  color: green;
+.price {
+    color: green;
+    font-weight: bold;
 }
 
-button {
-  background-color: #0b3d91;
-  color: white;
-  border: none;
-  padding: 8px 12px;
-  margin: 5px 5px 0 0;
-  border-radius: 5px;
-  cursor: pointer;
+.card button {
+    margin: 5px;
+    padding: 8px 14px;
+    border: none;
+    background: #1f3e70;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
-button:hover {
-  background-color: #062b66;
+.card button:hover {
+    background: #284f8a;
 }
 
-.modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
 }
 
-.modal.hidden {
-  display: none;
+.popup-content {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
 }
 
-.modal-content {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 400px;
-  max-width: 90%;
-  position: relative;
+.popup-content button {
+    background: #1f3e70;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 6px;
 }
 
-.modal-close {
-  position: absolute;
-  top: 10px; right: 10px;
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.success-msg {
-  color: green;
-  font-weight: bold;
-  margin-top: 10px;
+.finish {
+    margin-top: 15px;
+    font-weight: bold;
+    color: green;
 }
