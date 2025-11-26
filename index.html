@@ -1,101 +1,109 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KemasinAja — Edible Film</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamasitukja – Edible Film</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500;700&family=Cormorant:wght@400;500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <img src="assets/logo.png" alt="KemasinAja" class="logo" />
-      <nav>
-        <a href="#produk">Produk</a>
-        <a href="#harga">Harga</a>
-        <a href="#faq">FAQ</a>
-      </nav>
-    </aside>
 
-    <!-- Main -->
-    <main class="main">
-      <header class="header">
-        <h1>Edible Film KemasinAja</h1>
-        <p>Tipis, higienis, lezat — kemasan yang bisa dimakan.</p>
-      </header>
-
-      <!-- Produk -->
-      <section id="produk" class="section">
-        <h2>Varian Produk</h2>
-        <div class="cards">
-          <div class="card" data-id="plain">
-            <img src="assets/plain.jpg" alt="Plain Savory" />
-            <h3>Plain Savory</h3>
-            <p>Netral, bening, elastis — cocok untuk snack gurih.</p>
-            <span class="price">Rp 10.000</span>
-            <button class="detail-btn">Detail</button>
-            <button class="order-btn">Pesan</button>
-          </div>
-          <div class="card" data-id="spice">
-            <img src="assets/spice.jpg" alt="Spice Boost" />
-            <h3>Spice Boost</h3>
-            <p>Sentuhan rempah halus untuk produk pedas.</p>
-            <span class="price">Rp 10.000</span>
-            <button class="detail-btn">Detail</button>
-            <button class="order-btn">Pesan</button>
-          </div>
-          <div class="card" data-id="sweet">
-            <img src="assets/sweet.jpg" alt="Sweet Glow" />
-            <h3>Sweet Glow</h3>
-            <p>Glossy, manis ringan — cocok untuk dessert.</p>
-            <span class="price">Rp 10.000</span>
-            <button class="detail-btn">Detail</button>
-            <button class="order-btn">Pesan</button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Harga -->
-      <section id="harga" class="section">
-        <h2>Harga Paket</h2>
-        <ul>
-          <li>Starter: Rp 10.000 / roll kecil</li>
-          <li>Pro: Rp 20.000 / roll kecil</li>
-          <li>Bulk: Hubungi kami</li>
-        </ul>
-      </section>
-
-      <!-- FAQ -->
-      <section id="faq" class="section">
-        <h2>FAQ</h2>
-        <details>
-          <summary>Apakah edible film aman dimakan?</summary>
-          <p>Ya, menggunakan bahan food-grade dan higienis.</p>
-        </details>
-        <details>
-          <summary>Bisa custom ukuran & rasa?</summary>
-          <p>Bisa, sesuai kebutuhan produksi.</p>
-        </details>
-      </section>
-    </main>
-  </div>
-
-  <!-- Modal -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <button class="modal-close">×</button>
-      <div id="modalBody"></div>
-      <div id="orderOptions" class="hidden">
-        <h3>Pilih Paket:</h3>
-        <button class="price-btn" data-price="Starter">Starter (Rp 10.000)</button>
-        <button class="price-btn" data-price="Pro">Pro (Rp 20.000)</button>
-        <button class="price-btn" data-price="Bulk">Bulk (Hubungi Kami)</button>
-      </div>
-      <p id="orderSuccess" class="hidden success-msg">✅ Pemesanan telah selesai. Mohon tunggu konfirmasi dari tim KemasinAja.</p>
+<div class="sidebar">
+    <div class="logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Green_leaf_icon.svg" alt="Logo">
+        <h2>Kamasitukja</h2>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <ul>
+        <li class="active">Folin</li>
+        <li>Poop</li>
+        <li>Peb</li>
+    </ul>
+</div>
+
+<div class="content">
+    <h1 class="title">Edible Film <br> Kemasin Aja</h1>
+    <p class="subtitle">Tips, kigdens, káuh — kemaen yeng ben dtinakeh.</p>
+
+    <h2 class="section-title">Varian Produk</h2>
+
+    <div class="product-container">
+
+        <!-- PRODUCT 1 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b" alt="Plain Savery">
+            <h3>Plain Savery</h3>
+            <p>Cofocaju kmpersmier capitetri bniexter alent.</p>
+            <p class="price">Rp 10.000</p>
+            <button onclick="showDetail('Plain Savery', 'Film edible rasa original yang ringan dan gurih, cocok untuk camilan atau lapisan makanan.')">Detail</button>
+            <button onclick="showOrder('Plain Savery')">Pesan</button>
+        </div>
+
+        <!-- PRODUCT 2 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2" alt="Spice Boost">
+            <h3>Spice Boost</h3>
+            <p>Croicaju kampeismie creplief blier alent.</p>
+            <p class="price">Rp 14.000</p>
+            <button onclick="showDetail('Spice Boost', 'Varian pedas dan gurih yang memberikan sensasi ekstra pada sajian Anda.')">Detail</button>
+            <button onclick="showOrder('Spice Boost')">Pesan</button>
+        </div>
+
+        <!-- PRODUCT 3 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1604908812256-3e248f6a0bde" alt="Sweet Glow">
+            <h3>Sweet Glow</h3>
+            <p>Cootiej kmpesnier cosielt bueriolen.</p>
+            <p class="price">Rp 12.000</p>
+            <button onclick="showDetail('Sweet Glow', 'Varian manis lembut yang cocok untuk dessert atau topping.')">Detail</button>
+            <button onclick="showOrder('Sweet Glow')">Pesan</button>
+        </div>
+
+        <!-- PRODUCT 4 -->
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1505253216365-52ae97d7b0fb" alt="Citrus Fresh">
+            <h3>Citrus Fresh</h3>
+            <p>Coticaju kmpesmier creplief cienc alent.</p>
+            <p class="price">Rp 13.000</p>
+            <button onclick="showDetail('Citrus Fresh', 'Rasa lemon segar memberikan aroma serta sensasi unik.')">Detail</button>
+            <button onclick="showOrder('Citrus Fresh')">Pesan</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- POPUP DETAIL -->
+<div class="popup" id="detailPopup">
+    <div class="popup-content">
+        <h2 id="detailTitle"></h2>
+        <p id="detailText"></p>
+        <button onclick="closePopup()">Tutup</button>
+    </div>
+</div>
+
+<!-- POPUP PESAN -->
+<div class="popup" id="orderPopup">
+    <div class="popup-content">
+        <h2 id="orderTitle"></h2>
+
+        <label>Pilih Harga:</label>
+        <select id="priceSelect">
+            <option>Rp 10.000</option>
+            <option>Rp 12.000</option>
+            <option>Rp 14.000</option>
+        </select>
+
+        <button id="nextOrder" onclick="showFinal()">Pesan Sekarang</button>
+        <button onclick="closePopup()">Batal</button>
+
+        <p id="finishText" class="finish"></p>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
