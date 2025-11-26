@@ -1,151 +1,141 @@
 body {
     margin: 0;
-    padding: 0;
-    font-family: 'Cormorant', serif;
-    background: #e7eef7;
+    background: #e9eef7;
+    font-family: "Cormorant", serif;
     display: flex;
 }
 
 /* SIDEBAR */
 .sidebar {
-    width: 230px;
+    width: 240px;
     background: #0d2347;
     height: 100vh;
     padding: 25px;
     color: white;
+    position: fixed;
 }
 
+/* LOGO */
 .logo {
     text-align: center;
 }
-
 .logo img {
     width: 55px;
 }
-
 .logo h2 {
-    font-family: "Alegreya Sans";
     margin-top: 10px;
+    font-family: "Alegreya Sans";
 }
 
-.sidebar ul {
-    margin-top: 40px;
-    padding: 0;
-}
-
+/* MENU */
+.sidebar ul { margin-top: 40px; padding: 0; }
 .sidebar li {
     list-style: none;
     padding: 12px;
-    cursor: pointer;
     border-radius: 6px;
-    margin: 5px 0;
+    cursor: pointer;
 }
-
 .sidebar li.active,
 .sidebar li:hover {
-    background: #1f3e70;
+    background: #1e3a66;
 }
 
-/* CONTENT */
+/* MAIN CONTENT */
 .content {
+    margin-left: 260px;
     padding: 40px;
-    width: 100%;
+    width: calc(100% - 260px);
 }
 
-.title {
-    font-family: "Alegreya Sans";
-    font-size: 42px;
-    margin-bottom: 5px;
-    color: #0d2347;
-}
-
-.subtitle {
-    font-size: 18px;
-    margin-bottom: 40px;
-}
-
-.section-title {
-    font-family: "Alegreya Sans";
-    font-size: 28px;
-    margin-bottom: 20px;
-}
-
-.product-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.card {
-    background: white;
-    padding: 18px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-.card img {
-    width: 100%;
-    border-radius: 12px;
-    margin-bottom: 15px;
-}
-
-.card h3 {
-    font-family: "Alegreya Sans";
-}
-
-.price {
-    color: green;
-    font-weight: bold;
-}
-
-.card button {
-    margin: 5px;
-    padding: 8px 14px;
-    border: none;
-    background: #1f3e70;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.card button:hover {
-    background: #284f8a;
-}
-
-/* POPUP */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.4);
-    justify-content: center;
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
+.hero h1 {
+    font-family: "Alegreya Sans";
+    font-size: 42px;
+    margin: 0;
+}
+.hero-img {
+    width: 250px;
+    border-radius: 18px;
+    opacity: 0.95;
+}
 
-.popup-content {
+/* PRODUCT GRID */
+.product-grid {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 270px);
+    gap: 30px;
+}
+
+/* CARD */
+.product-card {
     background: white;
-    padding: 30px;
-    width: 350px;
-    border-radius: 10px;
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    width: 270px;
     text-align: center;
 }
-
-.popup-content button {
-    background: #1f3e70;
-    color: white;
+.product-card img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.price { color: green; font-weight: bold; }
+.btn-row button {
+    padding: 7px 12px;
+    margin: 3px;
     border: none;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: pointer;
+    background: #1e3a66;
+    color: white;
     border-radius: 6px;
+    cursor: pointer;
 }
 
-.finish {
-    margin-top: 15px;
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-box {
+    background: white;
+    padding: 25px;
+    width: 340px;
+    border-radius: 14px;
+    text-align: center;
+    animation: scaleIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to   { transform: scale(1); opacity: 1; }
+}
+
+.close-btn {
+    background: #999 !important;
+    margin-top: 5px;
+}
+.close-btn:hover { background: #777 !important; }
+
+#finishMsg {
+    margin-top: 10px;
     font-weight: bold;
     color: green;
 }
