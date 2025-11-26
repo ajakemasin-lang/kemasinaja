@@ -1,24 +1,20 @@
-// SHOW DETAIL POPUP
-function showDetail(title, text) {
+function openDetail(title, desc) {
     document.getElementById("detailTitle").innerText = title;
-    document.getElementById("detailText").innerText = text;
-    document.getElementById("detailPopup").style.display = "flex";
+    document.getElementById("detailDesc").innerText = desc;
+    document.getElementById("detailModal").style.display = "flex";
 }
 
-// SHOW ORDER POPUP
-function showOrder(product) {
+function openOrder(product) {
     document.getElementById("orderTitle").innerText = "Pesan " + product;
-    document.getElementById("finishText").innerText = "";
-    document.getElementById("orderPopup").style.display = "flex";
+    document.getElementById("finishMsg").innerText = "";
+    document.getElementById("orderModal").style.display = "flex";
 }
 
-// CLOSE ANY POPUP
-function closePopup() {
-    document.getElementById("detailPopup").style.display = "none";
-    document.getElementById("orderPopup").style.display = "none";
+function closeModal() {
+    document.getElementById("detailModal").style.display = "none";
+    document.getElementById("orderModal").style.display = "none";
 }
 
-// FINISH ORDER
-function showFinal() {
-    document.getElementById("finishText").innerText = "Pemesanan selesai, mohon tunggu...";
+function finishOrder() {
+    document.getElementById("finishMsg").innerText = "Pemesanan selesai, mohon tunggu...";
 }
