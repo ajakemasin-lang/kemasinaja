@@ -1,28 +1,24 @@
-// Tombol Detail
-document.querySelectorAll(".detail-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const id = btn.closest(".card").getAttribute("data-id");
-    let detail = "";
+// SHOW DETAIL POPUP
+function showDetail(title, text) {
+    document.getElementById("detailTitle").innerText = title;
+    document.getElementById("detailText").innerText = text;
+    document.getElementById("detailPopup").style.display = "flex";
+}
 
-    if (id === "plain") {
-      detail = "<h3>Plain Savory</h3><p>Film netral, bening, elastis. Cocok untuk snack gurih seperti keripik, nugget, atau bakso.</p>";
-    } else if (id === "spice") {
-      detail = "<h3>Spice Boost</h3><p>Sentuhan rempah halus. Cocok untuk produk pedas seperti sambal, keripik balado, atau ayam geprek.</p>";
-    } else if (id === "sweet") {
-      detail = "<h3>Sweet Glow</h3><p>Glossy dan manis ringan. Cocok untuk dessert seperti puding, mochi, atau brownies.</p>";
-    }
+// SHOW ORDER POPUP
+function showOrder(product) {
+    document.getElementById("orderTitle").innerText = "Pesan " + product;
+    document.getElementById("finishText").innerText = "";
+    document.getElementById("orderPopup").style.display = "flex";
+}
 
-    document.getElementById("modalBody").innerHTML = detail;
-    document.getElementById("orderOptions").classList.add("hidden");
-    document.getElementById("orderSuccess").classList.add("hidden");
-    document.getElementById("modal").classList.remove("hidden");
-  });
-});
+// CLOSE ANY POPUP
+function closePopup() {
+    document.getElementById("detailPopup").style.display = "none";
+    document.getElementById("orderPopup").style.display = "none";
+}
 
-// Tombol Pesan
-document.querySelectorAll(".order-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.getElementById("modalBody").innerHTML = "";
-    document.getElementById("orderOptions").classList.remove("hidden");
-    document.getElementById("orderSuccess").classList.add("hidden");
-    document
+// FINISH ORDER
+function showFinal() {
+    document.getElementById("finishText").innerText = "Pemesanan selesai, mohon tunggu...";
+}
