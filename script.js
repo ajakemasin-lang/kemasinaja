@@ -25,30 +25,4 @@ document.querySelectorAll(".order-btn").forEach(btn => {
     document.getElementById("modalBody").innerHTML = "";
     document.getElementById("orderOptions").classList.remove("hidden");
     document.getElementById("orderSuccess").classList.add("hidden");
-    document.getElementById("modal").classList.remove("hidden");
-  });
-});
-
-// Pilih harga
-document.querySelectorAll(".price-btn").forEach(btn => {
-  btn.addEventListener("click", () => {
-    const selected = btn.getAttribute("data-price");
-    document.getElementById("orderOptions").innerHTML = `
-      <p>Paket dipilih: <strong>${selected}</strong></p>
-      <button id="confirmOrder">Pesan Sekarang</button>
-    `;
-    document.getElementById("orderSuccess").classList.add("hidden");
-
-    setTimeout(() => {
-      document.getElementById("confirmOrder").addEventListener("click", () => {
-        document.getElementById("orderOptions").classList.add("hidden");
-        document.getElementById("orderSuccess").classList.remove("hidden");
-      });
-    }, 100);
-  });
-});
-
-// Tutup modal
-document.querySelector(".modal-close").addEventListener("click", () => {
-  document.getElementById("modal").classList.add("hidden");
-});
+    document
