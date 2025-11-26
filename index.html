@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamasitukja – Edible Film</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@500;700&family=Cormorant:wght@400;500&display=swap" rel="stylesheet">
-
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@600;700&family=Cormorant:wght@400;500&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="sidebar">
+<!-- SIDEBAR -->
+<aside class="sidebar">
     <div class="logo">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Green_leaf_icon.svg" alt="Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/Green_leaf_icon.svg">
         <h2>Kamasitukja</h2>
     </div>
 
@@ -23,84 +24,97 @@
         <li>Poop</li>
         <li>Peb</li>
     </ul>
-</div>
+</aside>
 
-<div class="content">
-    <h1 class="title">Edible Film <br> Kemasin Aja</h1>
-    <p class="subtitle">Tips, kigdens, káuh — kemaen yeng ben dtinakeh.</p>
+<!-- MAIN CONTENT -->
+<main class="content">
+
+    <div class="hero">
+        <div>
+            <h1>Edible Film<br>Kemasin Aja</h1>
+            <p>Tips, kigdens, káuh — kemaen yeng ben dtinakeh.</p>
+        </div>
+        <img src="https://images.unsplash.com/photo-1542820635-42d0cbe1cf77" class="hero-img">
+    </div>
 
     <h2 class="section-title">Varian Produk</h2>
 
-    <div class="product-container">
+    <div class="product-grid">
 
-        <!-- PRODUCT 1 -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b" alt="Plain Savery">
+        <!-- PRODUCT TEMPLATE -->
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b">
             <h3>Plain Savery</h3>
             <p>Cofocaju kmpersmier capitetri bniexter alent.</p>
             <p class="price">Rp 10.000</p>
-            <button onclick="showDetail('Plain Savery', 'Film edible rasa original yang ringan dan gurih, cocok untuk camilan atau lapisan makanan.')">Detail</button>
-            <button onclick="showOrder('Plain Savery')">Pesan</button>
+            <div class="btn-row">
+                <button onclick="openDetail('Plain Savery','Film edible rasa original yang ringan dan gurih, cocok untuk camilan atau pelapis makanan.')">Detail</button>
+                <button onclick="openOrder('Plain Savery')">Pesan</button>
+            </div>
         </div>
 
-        <!-- PRODUCT 2 -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2" alt="Spice Boost">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2">
             <h3>Spice Boost</h3>
-            <p>Croicaju kampeismie creplief blier alent.</p>
+            <p>Varian pedas gurih yang memberikan sensasi ekstra.</p>
             <p class="price">Rp 14.000</p>
-            <button onclick="showDetail('Spice Boost', 'Varian pedas dan gurih yang memberikan sensasi ekstra pada sajian Anda.')">Detail</button>
-            <button onclick="showOrder('Spice Boost')">Pesan</button>
+            <div class="btn-row">
+                <button onclick="openDetail('Spice Boost','Edible film rasa pedas memberikan sensasi gurih dan aroma kuat.')">Detail</button>
+                <button onclick="openOrder('Spice Boost')">Pesan</button>
+            </div>
         </div>
 
-        <!-- PRODUCT 3 -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1604908812256-3e248f6a0bde" alt="Sweet Glow">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1604908812256-3e248f6a0bde">
             <h3>Sweet Glow</h3>
-            <p>Cootiej kmpesnier cosielt bueriolen.</p>
+            <p>Rasa manis lembut cocok untuk dessert.</p>
             <p class="price">Rp 12.000</p>
-            <button onclick="showDetail('Sweet Glow', 'Varian manis lembut yang cocok untuk dessert atau topping.')">Detail</button>
-            <button onclick="showOrder('Sweet Glow')">Pesan</button>
+            <div class="btn-row">
+                <button onclick="openDetail('Sweet Glow','Edible film rasa manis lembut, pas untuk topping atau dessert.')">Detail</button>
+                <button onclick="openOrder('Sweet Glow')">Pesan</button>
+            </div>
         </div>
 
-        <!-- PRODUCT 4 -->
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1505253216365-52ae97d7b0fb" alt="Citrus Fresh">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1505253216365-52ae97d7b0fb">
             <h3>Citrus Fresh</h3>
-            <p>Coticaju kmpesmier creplief cienc alent.</p>
+            <p>Rasa lemon segar yang wangi & unik.</p>
             <p class="price">Rp 13.000</p>
-            <button onclick="showDetail('Citrus Fresh', 'Rasa lemon segar memberikan aroma serta sensasi unik.')">Detail</button>
-            <button onclick="showOrder('Citrus Fresh')">Pesan</button>
+            <div class="btn-row">
+                <button onclick="openDetail('Citrus Fresh','Film edible rasa lemon segar dengan aroma citrus alami.')">Detail</button>
+                <button onclick="openOrder('Citrus Fresh')">Pesan</button>
+            </div>
         </div>
 
     </div>
-</div>
 
-<!-- POPUP DETAIL -->
-<div class="popup" id="detailPopup">
-    <div class="popup-content">
+</main>
+
+<!-- DETAIL MODAL -->
+<div class="modal" id="detailModal">
+    <div class="modal-box">
         <h2 id="detailTitle"></h2>
-        <p id="detailText"></p>
-        <button onclick="closePopup()">Tutup</button>
+        <p id="detailDesc"></p>
+        <button class="close-btn" onclick="closeModal()">Tutup</button>
     </div>
 </div>
 
-<!-- POPUP PESAN -->
-<div class="popup" id="orderPopup">
-    <div class="popup-content">
+<!-- ORDER MODAL -->
+<div class="modal" id="orderModal">
+    <div class="modal-box">
         <h2 id="orderTitle"></h2>
 
-        <label>Pilih Harga:</label>
-        <select id="priceSelect">
+        <label>Pilih Harga</label>
+        <select id="orderPrice">
             <option>Rp 10.000</option>
             <option>Rp 12.000</option>
             <option>Rp 14.000</option>
         </select>
 
-        <button id="nextOrder" onclick="showFinal()">Pesan Sekarang</button>
-        <button onclick="closePopup()">Batal</button>
+        <button onclick="finishOrder()">Pesan Sekarang</button>
+        <button class="close-btn" onclick="closeModal()">Batal</button>
 
-        <p id="finishText" class="finish"></p>
+        <p id="finishMsg"></p>
     </div>
 </div>
 
